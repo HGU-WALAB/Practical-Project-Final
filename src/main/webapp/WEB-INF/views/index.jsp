@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<jsp:forward page="list.jsp" />
+<h1>Hello world</h1>
+<p>The time is ${serverTime}</p>
+<p><a href="list">게시판으로 이동</a></p>
 
 </body>
 </html>

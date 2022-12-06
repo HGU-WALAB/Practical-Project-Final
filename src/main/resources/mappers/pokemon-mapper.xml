@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Pokemon">
+    <insert id="insertPokemon">
+        insert into Pokemon (CP,Photo,PokemonName,Gender,Age,Weight,Habitat,Characteristic)
+        values
+        (#{CP},#{Photo} ,#{PokemonName} , #{Gender} , #{Age} , #{Weight} , #{Habitat} , #{Characteristic})
+    </insert>
+    <update id="updatePokemon">
+        update Pokemon
+        set CP=#{CP} , Photo=#{Photo} , PokemonName=#{PokemonName} , Gender=#{Gender} , Age=#{Age} , Weight=#{Weight}, Habitat=#{Habitat}, Characteristic=#{Characteristic}
+        where PokemonID=#{PokemonID}
+    </update>
+    <delete id="deletePokemon">
+        delete from Pokemon where PokemonID=#{PokemonID}
+    </delete>
+    <select id="getPokemon" resultType="Pokemon">
+        select * from Pokemon where PokemonID=#{PokemonID}
+    </select>
+    <select id="getPokemonList" resultType="Pokemon">
+        select * from Pokemon order by PokemonID desc
+    </select>
+</mapper>

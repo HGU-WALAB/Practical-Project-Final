@@ -11,15 +11,15 @@
 <h1>Add New Post</h1>
 <form action="addok" method="post">
 <table id="edit">
-<tr><td>CP : </td><td><input type="text" name="cp"/></td></tr>
-<tr><td>Photo : </td><td><input type="text" name="photo"/></td></tr>
-<tr><td>PokemonName : </td><td><input type="text" name="pokemonname"/></td></tr>
-    <tr><td>Gender : </td><td><input type="text" name="gender"/></td></tr>
-    <tr><td>Age : </td><td><input type="number" name="age"/></td></tr>
-    <tr><td>Weight : </td><td><input type="number" name="weight"/></td></tr>
-    <tr><td>Habitat : </td><td><input type="text" name="habitat"/></td></tr>
-    <tr><td>Characteristic : </td><td><textarea name="characteristic" id="story"
-                                                rows="5" cols="40"/></td></tr>
+<tr><td>CP : </td><td><input type="text" name="CP"/></td></tr>
+<tr><td>Photo : </td><td><input type="text" name="Photo"/></td></tr>
+<tr><td>PokemonName : </td><td><input type="text" name="PokemonName"/></td></tr>
+    <tr><td>Gender : </td><td><input type="text" name="Gender"/></td></tr>
+    <tr><td>Age : </td><td><input type="number" name="Age"/></td></tr>
+    <tr><td>Weight : </td><td><input type="number" name="Weight"/></td></tr>
+    <tr><td>Habitat : </td><td><input type="text" name="Habitat"/></td></tr>
+    <tr><td>Characteristic : </td><td><textarea name="Characteristic" id="story"
+                                                rows="5" cols="40"></textarea></td></tr>
 <%--    <tr><td>Catchdata : </td><td><input type="date" name="Catchdata"/></td></tr>--%>
 <%--    <td><textarea cols="50" rows="5" name="content"></textarea></td></tr>--%>
 
