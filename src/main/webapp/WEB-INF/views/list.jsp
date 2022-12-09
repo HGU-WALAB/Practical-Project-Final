@@ -32,7 +32,9 @@
 </head>
 <body>
 <h1>자유게시판</h1>
- 
+
+<button type="button" onclick="location.href='login/logout'">logout</button>
+
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
