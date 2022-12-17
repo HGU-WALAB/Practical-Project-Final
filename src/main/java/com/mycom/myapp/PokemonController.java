@@ -25,13 +25,17 @@ public class PokemonController {
         return "addpostform";
     }
 
-    @RequestMapping(value="/addok",method = RequestMethod.POST)
-    public String addPokemonOK (PokemonVO vo){
+    @RequestMapping(value="/addok" , method = RequestMethod.POST)
+    public String addPokemonOK (PokemonVO vo,Model model) {
+
         if(pokemonService.insertPokemon(vo)==0){
             System.out.println("데이터 추가 실패");
         }
         else{
             System.out.println("데이터 추가 성공");
+            model.addAttribute("url", "/list");
+            model.addAttribute("msg", "포켓몬을 잡았습니다!");
+            return "redirect:alertadd";
         }
         return "redirect:list";
     }
@@ -52,13 +56,39 @@ public class PokemonController {
     }
 
     @RequestMapping(value= "/deleteok/{id}" , method=RequestMethod.GET)
-    public String deletePostOk(@PathVariable("id") int id){
+    public String deletePostOk(@PathVariable("id") int id) {
+
         if(pokemonService.deletePokemon(id)==0)
             System.out.println("데이터 수정 실패 ");
-        else
+        else {
             System.out.println("데이터 수정 성공!!!");
+
+            return "redirect:../alertdel";
+        }
         return "redirect:../list";
     }
+
+    @RequestMapping(value="/detail/{id}",method = RequestMethod.GET)
+    public String detailPokemon (@PathVariable("id") int id, Model model){
+        PokemonVO pokemonVO = pokemonService.getPokemon(id);
+        model.addAttribute("pokemonVO",pokemonVO);
+
+        return "detail";
+    }
+    @RequestMapping(value="/alertdel", method = RequestMethod.GET)
+    public String alertDelete (Model model){
+        model.addAttribute("url", "list");
+        model.addAttribute("msg", "포켓몬을 방생하였습니다.");
+        return "alert";
+    }
+
+    @RequestMapping(value="/alertadd", method = RequestMethod.GET)
+    public String alertAdd (Model model){
+        model.addAttribute("url", "list");
+        model.addAttribute("msg", "포켓몬을 잡았습니다.");
+        return "alert";
+    }
+
 
 
 }
