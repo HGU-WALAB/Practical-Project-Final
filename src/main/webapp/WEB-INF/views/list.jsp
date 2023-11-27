@@ -31,10 +31,12 @@
 		background-color: black;
 	}
 	.container{
+		display: flex;
+		justify-content: center;
 		background-color: white;
 	}
 	#block{
-		margin: 10px;
+		/*margin: 10px;*/
 		margin-top: 30px;
 		width: 300px;
 		height: 400px;
@@ -97,11 +99,12 @@
 
 <h1 id="one_line"><img src="./img/pokeball.png" width="50" /> My Pokemons </h1>
 
-<div class="container">
-	<div class="row">
-<c:forEach items="${list}" var="u">
+<div class="container" style="">
+	<div style="width:100%; display: grid; place-items: center; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-gap: 10px;">
 
-			<div class="col-md-4" id="block">
+	<c:forEach items="${list}" var="u">
+
+			<div id="block">
 				<div id="block_img"><img src="./img/${u.getPhoto()}" width=200 /></div>
 
 				<div id="block_text">
